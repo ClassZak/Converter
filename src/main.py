@@ -6,6 +6,16 @@ def finish():
 	global root
 	root.destroy()
 	print('Converter closed')
+
+def create_main_menu(root):
+	menu_main = tk.Menu(tearoff = 0)
+	menu_edit = tk.Menu(tearoff = 0)
+	
+	menu_edit.add_command(label = 'Edit')
+	
+	menu_main.add_cascade(label = 'File', menu = menu_edit)
+	
+	root.config(menu = menu_main)
 	
 def main():
 	global root
@@ -17,6 +27,8 @@ def main():
 	button_about	= tk.Button(text='About')
 	button_convert.pack()
 	button_about.pack()
+	
+	create_main_menu(root)
 	
 	root.mainloop()
 
