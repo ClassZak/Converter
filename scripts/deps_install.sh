@@ -1,2 +1,2 @@
 #!/bin/bash
-pip install tk
+pip install tk pydub
