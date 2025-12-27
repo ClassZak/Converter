@@ -10,7 +10,7 @@ def finish():
 	print('Converter closed')
 
 def exit_command():
-	response = tkinter.messagebox.askyesnocancel('Exit', 'Are you sure to exit?')
+	response = tkinter.messagebox.askyesno('Exit', 'Are you sure to exit?')
 	if response:
 		finish()
 
