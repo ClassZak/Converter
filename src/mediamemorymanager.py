@@ -1,4 +1,5 @@
 from pydub import AudioSegment
+from media import Media
 
 
 class MediaMemoryManager:

@@ -1,17 +1,25 @@
 import tkinter as tk
+import tkinter.messagebox
+from mediamemorymanager import MediaMemoryManager
 
-root = None
+root = tk.Tk() 
 
 def finish():
 	global root
 	root.destroy()
 	print('Converter closed')
 
+def exit_command():
+	response = tkinter.messagebox.askyesnocancel('Exit', 'Are you sure to exit?')
+	if response:
+		finish()
+
 def create_main_menu(root):
 	menu_main = tk.Menu(tearoff = 0)
 	menu_edit = tk.Menu(tearoff = 0)
 	
 	menu_edit.add_command(label = 'Edit')
+	menu_edit.add_command(label = 'Exit', command=exit_command)
 	
 	menu_main.add_cascade(label = 'File', menu = menu_edit)
 	
@@ -19,7 +27,6 @@ def create_main_menu(root):
 	
 def main():
 	global root
-	root = tk.Tk()
 	root.title('Python converter')
 	root.protocol('WM_DELETE_WINDOW', finish)
 	
